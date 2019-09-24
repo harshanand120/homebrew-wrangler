@@ -1,4 +1,4 @@
-class Wrangler < Formula
+class WranglerCli < Formula
   desc "Wrangle your cloudflare workers"
   homepage "https://workers.cloudflare.com/"
   url "https://github.com/cloudflare/wrangler/releases/download/v1.3.1/wrangler-v1.3.1-x86_64-apple-darwin.tar.gz"

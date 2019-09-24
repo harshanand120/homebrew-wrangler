@@ -21,7 +21,7 @@ brew tap bvanrijn/wrangler
 To install Wrangler CLI:
 
 ```
-brew install wrangler
+brew install wrangler-cli
 ```
 
 ## Dev Releases
@@ -30,7 +30,7 @@ To install dev channel releases, instead of the stable ones, add a `--devel`
 flag after the brew commands:
 
 ```shell
-brew install wrangler --devel
+brew install wrangler-cli --devel
 ```
 
 ## Updating
@@ -39,7 +39,7 @@ Simply run:
 
 ```
 brew update
-brew upgrade wrangler
+brew upgrade wrangler-cli
 ```
 
 ## Documentation for formulae
