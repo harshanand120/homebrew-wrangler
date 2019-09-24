@@ -1,4 +1,4 @@
-# Wrangler for Homebrew
+# Wrangler for Homebrew [![Build Status](https://travis-ci.com/bvanrijn/homebrew-wrangler.svg?branch=master)](https://travis-ci.com/bvanrijn/homebrew-wrangler)
 
 This is an unofficial [Homebrew][] tap for Cloudflare's [Wrangler][] CLI.
 
