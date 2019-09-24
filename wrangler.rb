@@ -17,7 +17,7 @@ class Wrangler < Formula
     # TODO: Find a better test that won't break on every release.
     version_output = shell_output("#{bin}/wrangler --version")
 
-    assert_includes version_output, "1.3.1" if not build.devel?
+    assert_includes version_output, "1.3.1" unless build.devel?
     assert_includes version_output, "1.4.0-rc.3" if build.devel?
   end
 end
