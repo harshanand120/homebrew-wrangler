@@ -50,7 +50,7 @@ options = {}
 
 # If the script is called without user arguments, we push "--help"
 # so the help message is shown. From https://stackoverflow.com/q/20604680
-ARGV << "--help" if ARGV.empty?
+ARGV << '--help' if ARGV.empty?
 
 OptionParser.new do |opts|
     opts.banner = "Usage #{$PROGRAM_NAME} [options]"
