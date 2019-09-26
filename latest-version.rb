@@ -3,6 +3,7 @@
 require 'digest'
 require 'json'
 require 'open-uri'
+require 'optparse'
 
 RELEASES_ENDPOINT = 'https://api.github.com/repos/cloudflare/wrangler/releases'
 
@@ -45,8 +46,35 @@ def print_details release
     puts
 end
 
-latest_stable     = get_latest_release :stable
-latest_prerelease = get_latest_release :prerelease
+options = {}
 
-print_details latest_stable
-print_details latest_prerelease
+# If the script is called without user arguments, we push "--help"
+# so the help message is shown. From https://stackoverflow.com/q/20604680
+ARGV << "--help" if ARGV.empty?
+
+OptionParser.new do |opts|
+    opts.banner = "Usage #{$PROGRAM_NAME} [options]"
+
+    opts.on('-S', '--[no-]stable', 'Print stable version details') do |s|
+        options[:stable] = s
+    end
+
+    opts.on('-P', '--[no-]prerelease', 'Print pre-release version details') do |p|
+        options[:prerelease] = p
+    end
+
+    opts.on_tail('-h', '--help', 'Display this message and exit') do
+        puts opts
+        exit 0
+    end
+end.parse!
+
+if options[:stable]
+    latest_stable = get_latest_release :stable
+    print_details latest_stable
+end
+
+if options[:prerelease]
+    latest_prerelease = get_latest_release :prerelease
+    print_details latest_prerelease
+end
