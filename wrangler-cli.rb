@@ -5,8 +5,8 @@ class WranglerCli < Formula
   sha256 "7dcc3976e84021bf484f58fb75fbd651eba1c71a255ad85e2cd765b32747901f"
 
   devel do
-    url "https://github.com/cloudflare/wrangler/releases/download/v1.4.0-rc.4/wrangler-v1.4.0-rc.4-x86_64-apple-darwin.tar.gz"
-    sha256 "63fd91053d31ec6612bc56afc3404923a51c12614a7cc1bc3ec57bd9c3008a47"
+    url "https://github.com/cloudflare/wrangler/releases/download/v1.4.0-rc.5/wrangler-v1.4.0-rc.5-x86_64-apple-darwin.tar.gz"
+    sha256 "6eba7c8204d766eda91bb31e526993b7022757fbb0958b757f7d3a24f9785825"
   end
 
   def install
@@ -18,6 +18,6 @@ class WranglerCli < Formula
     version_output = shell_output("#{bin}/wrangler --version")
 
     assert_includes version_output, "1.3.1" unless build.devel?
-    assert_includes version_output, "1.4.0-rc.4" if build.devel?
+    assert_includes version_output, "1.4.0-rc.5" if build.devel?
   end
 end
