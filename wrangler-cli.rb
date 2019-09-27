@@ -1,12 +1,12 @@
 class WranglerCli < Formula
   desc "Wrangle your cloudflare workers"
   homepage "https://workers.cloudflare.com/"
-  url "https://github.com/cloudflare/wrangler/releases/download/v1.3.1/wrangler-v1.3.1-x86_64-apple-darwin.tar.gz"
-  sha256 "7dcc3976e84021bf484f58fb75fbd651eba1c71a255ad85e2cd765b32747901f"
+  url "https://github.com/cloudflare/wrangler/releases/download/v.1.4.0/wrangler-v1.4.0-x86_64-apple-darwin.tar.gz"
+  sha256 "19ecfd7b024bc294eed5154a58cc2bdcb34959472ad003c3529db1dadf01566a"
 
   devel do
-    url "https://github.com/cloudflare/wrangler/releases/download/v1.4.0-rc.5/wrangler-v1.4.0-rc.5-x86_64-apple-darwin.tar.gz"
-    sha256 "6eba7c8204d766eda91bb31e526993b7022757fbb0958b757f7d3a24f9785825"
+    url "https://github.com/cloudflare/wrangler/releases/download/v1.4.0-rc.7/wrangler-v1.4.0-rc.7-x86_64-apple-darwin.tar.gz"
+    sha256 "b7639b25270863cc1ae038c43e774b6f9c045b5aeb9f6a9e74cfe5b94e4fca45"
   end
 
   def install
@@ -17,7 +17,7 @@ class WranglerCli < Formula
     # TODO: Find a better test that won't break on every release.
     version_output = shell_output("#{bin}/wrangler --version")
 
-    assert_includes version_output, "1.3.1" unless build.devel?
-    assert_includes version_output, "1.4.0-rc.5" if build.devel?
+    assert_includes version_output, "1.4.0" unless build.devel?
+    assert_includes version_output, "1.4.0-rc.7" if build.devel?
   end
 end
