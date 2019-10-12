@@ -18,6 +18,6 @@ class WranglerCli < Formula
     version_output = shell_output("#{bin}/wrangler --version")
 
     assert_includes version_output, "1.4.0" unless build.devel?
-    assert_includes version_output, "1.4.0-rc.7" if build.devel?
+    assert_includes version_output, "1.5.0-rc.0" if build.devel?
   end
 end
