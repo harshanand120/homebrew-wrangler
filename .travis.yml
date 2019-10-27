@@ -1,0 +1,17 @@
+os: osx
+script:
+  # First, check the style of the formula
+  # From: https://github.com/AdoptOpenJDK/homebrew-openjdk/blob/master/.github/PULL_REQUEST_TEMPLATE.md
+  - brew audit --online --strict ./wrangler-cli.rb
+  - brew style ./wrangler-cli.rb
+
+  # Then, install and test the stable version
+  # From: https://docs.brew.sh/Formula-Cookbook
+  - brew install --verbose ./wrangler-cli.rb
+  - brew test ./wrangler-cli.rb
+
+  # Then, uninstall stable
+  - brew uninstall wrangler-cli
+  # And install and test the development version
+  - brew install --verbose --devel ./wrangler-cli.rb
+  - brew test --devel ./wrangler-cli.rb
