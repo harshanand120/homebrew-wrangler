@@ -1,20 +1,30 @@
 name: CI
 on: [push]
 jobs:
-  build:
+  audit:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
       - name: Audit formula
         run: brew audit --online --strict ./wrangler-cli.rb
+  style:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v1
       - name: Check formula style
         run: brew style ./wrangler-cli.rb
+  test-stable:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v1
       - name: "[stable] Install"
         run: brew install --verbose ./wrangler-cli.rb
       - name: "[stable] Test"
         run: brew test ./wrangler-cli.rb
-      - name: "[stable] Uninstall"
-        run: brew uninstall wrangler-cli
+  test-devel:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v1
       - name: "[devel] Install"
         run: brew install --verbose --devel ./wrangler-cli.rb
       - name: "[devel] Test"
