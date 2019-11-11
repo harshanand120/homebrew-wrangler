@@ -1,37 +1,31 @@
 name: CI
 on: [push]
-checkout: &checkout
-  uses: actions/checkout@v1
-macos: &macos
-  runs-on: macos-latest
 jobs:
   audit:
-    <<: *macos
+    runs-on: macos-latest
     steps:
-      - *checkout
+      - uses: actions/checkout@v1
       - name: Audit formula
         run: brew audit --online --strict ./wrangler-cli.rb
   style:
-    <<: *macos
+    runs-on: macos-latest
     steps:
-      - *checkout
+      - uses: actions/checkout@v1
       - name: Check formula style
         run: brew style ./wrangler-cli.rb
   test-stable:
-    <<: *macos
+    runs-on: macos-latest
     steps:
-      - *checkout
-      - name: Install
+      - uses: actions/checkout@v1
+      - name: "[stable] Install"
         run: brew install --verbose ./wrangler-cli.rb
-      - name: Test
+      - name: "[stable] Test"
         run: brew test ./wrangler-cli.rb
   test-devel:
-    <<: *macos
+    runs-on: macos-latest
     steps:
-      - *checkout
-      - name: Install
+      - uses: actions/checkout@v1
+      - name: "[devel] Install"
         run: brew install --verbose --devel ./wrangler-cli.rb
-      - name: Test
+      - name: "[devel] Test"
         run: brew test --devel ./wrangler-cli.rb
-# audit and style are adapted from the AdoptOpenJDK formula.
-# test-* comes from the Formula Cookbook.
