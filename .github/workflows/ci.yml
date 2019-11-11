@@ -9,13 +9,13 @@ jobs:
         run: brew audit --online --strict ./wrangler-cli.rb
       - name: Check formula style
         run: brew style ./wrangler-cli.rb
-      - name: [stable] Install
+      - name: "[stable] Install"
         run: brew install --verbose ./wrangler-cli.rb
-      - name: [stable] Test
+      - name: "[stable] Test"
         run: brew test ./wrangler-cli.rb
-      - name: [stable] Uninstall
+      - name: "[stable] Uninstall"
         run: brew uninstall wrangler-cli
-      - name: [devel] Install
+      - name: "[devel] Install"
         run: brew install --verbose --devel ./wrangler-cli.rb
-      - name: [devel] Test
+      - name: "[devel] Test"
         run: brew test --devel ./wrangler-cli.rb
