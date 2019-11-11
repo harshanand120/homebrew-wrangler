@@ -17,17 +17,17 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
-      - name: "[stable] Install"
+      - name: Install
         run: brew install --verbose ./wrangler-cli.rb
-      - name: "[stable] Test"
+      - name: Test
         run: brew test ./wrangler-cli.rb
   test-devel:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
-      - name: "[devel] Install"
+      - name: Install
         run: brew install --verbose --devel ./wrangler-cli.rb
-      - name: "[devel] Test"
+      - name: Test
         run: brew test --devel ./wrangler-cli.rb
 # audit and style are adapted from the AdoptOpenJDK formula.
 # test-* comes from the Formula Cookbook.
