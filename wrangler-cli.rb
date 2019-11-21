@@ -17,7 +17,7 @@ class WranglerCli < Formula
     # TODO: Find a better test that won't break on every release.
     version_output = shell_output("#{bin}/wrangler --version")
 
-    assert_includes version_output, "1.5.0" unless build.devel?
+    assert_includes version_output, "1.6.0" unless build.devel?
     assert_includes version_output, "1.6.0-rc.0" if build.devel?
   end
 end
