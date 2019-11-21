@@ -1,8 +1,8 @@
 class WranglerCli < Formula
   desc "Wrangle your cloudflare workers"
   homepage "https://workers.cloudflare.com/"
-  url "https://github.com/cloudflare/wrangler/releases/download/v1.5.0/wrangler-v1.5.0-x86_64-apple-darwin.tar.gz"
-  sha256 "68f51de6725952c42e29bdcf375a776adbb42fb6180d9cd25c0c0002af4329c5"
+  url "https://github.com/cloudflare/wrangler/releases/download/v1.6.0/wrangler-v1.6.0-x86_64-apple-darwin.tar.gz"
+  sha256 "9d765e9f9b169859a9843ffab35458493f720b2a2b32d60698eddc3307589191"
 
   devel do
     url "https://github.com/cloudflare/wrangler/releases/download/v1.6.0-rc.0/wrangler-v1.6.0-rc.0-x86_64-apple-darwin.tar.gz"
