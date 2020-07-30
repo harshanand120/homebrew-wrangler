@@ -5,27 +5,21 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Audit formula
-        run: brew audit --online --strict ./wrangler-cli.rb
+      - run: brew audit --online --strict ./wrangler-cli.rb
   style:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Check formula style
-        run: brew style ./wrangler-cli.rb
+      - run: brew style ./wrangler-cli.rb
   test-stable:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Install
-        run: brew install --verbose ./wrangler-cli.rb
-      - name: Test
-        run: brew test ./wrangler-cli.rb
-  test-devel:
+      - run: brew install --verbose ./wrangler-cli.rb
+      - run: brew test ./wrangler-cli.rb
+  test-head:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Install
-        run: brew install --verbose --head ./wrangler-cli.rb
-      - name: Test
-        run: brew test --head ./wrangler-cli.rb
+      - run: brew install --verbose --head ./wrangler-cli.rb
+      - run: brew test --head ./wrangler-cli.rb
