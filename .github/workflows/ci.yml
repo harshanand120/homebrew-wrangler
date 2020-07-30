@@ -26,6 +26,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Install
-        run: brew install --verbose --devel ./wrangler-cli.rb
+        run: brew install --verbose --head ./wrangler-cli.rb
       - name: Test
-        run: brew test --devel ./wrangler-cli.rb
+        run: brew test --head ./wrangler-cli.rb

@@ -24,11 +24,11 @@ brew install wrangler-cli
 
 ## Dev Releases
 
-To install dev channel releases, instead of the stable ones, add a `--devel`
+To install dev channel releases, instead of the stable ones, add a `--head`
 flag after the brew commands:
 
 ```shell
-brew install wrangler-cli --devel
+brew install wrangler-cli --head
 ```
 
 ## Updating
@@ -49,7 +49,7 @@ brew upgrade wrangler-cli
 
 This README is a modified version of the one found at [dart-lang/homebrew-dart][dartbrew], the official tap for the [Dart][] programming language.
 
-The `audit` and `style` [CI jobs][ci] are based [two commands][adopt] from the AdoptOpenJDK tap.  
+The `audit` and `style` [CI jobs][ci] are based [two commands][adopt] from the AdoptOpenJDK tap.
 The `test-stable` and `test-devel` steps are based on examples from the [Formula Cookbook][cookbook].
 
 [adopt]: https://github.com/AdoptOpenJDK/homebrew-openjdk/blob/master/.github/PULL_REQUEST_TEMPLATE.md
